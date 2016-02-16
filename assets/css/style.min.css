@@ -101,12 +101,23 @@ li:last-child { padding: 0; }
 /* MENU */
 
 #menu {
-    padding:3em;
+    padding: 3em;
 }
 #menu > a {
     display: block;
     padding: 0.85em 0;
     font-weight: 300;
+}
+#btn {
+    padding: .5em 1.5em;
+    border-radius: 5px;
+    background-color: #4c5c96;
+    font-weight: 400;
+    color: #fff;
+    transition: all 500ms ease;
+}
+#btn:hover {
+  background-color: #6777af;
 }
 
 /* MAIN */
