@@ -206,4 +206,10 @@ article .descr {
         width:98% !important;
         margin:auto;
     }
+    #menu > a {
+      padding:.1em;
+    }
+    #burger {
+      right:-.2em;
+    }
 }
