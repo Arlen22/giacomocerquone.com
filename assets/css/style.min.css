@@ -101,7 +101,7 @@ li:last-child { padding: 0; }
 /* MENU */
 
 #menu {
-    padding: 3em;
+    padding: 1em;
 }
 #menu > a {
     display: block;
