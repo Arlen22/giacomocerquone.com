@@ -102,7 +102,7 @@ li:last-child { padding: 0; }
   width:1.2em;
   height:1em;
   display:inline-block;
-  transition: all 500ms ease-in-out;
+  transition: all .3s ease-in-out;
 }
 #trakt:hover {
   fill:#ed1c24;
@@ -112,10 +112,20 @@ li:last-child { padding: 0; }
   width:1.2em;
   height:1em;
   display:inline-block;
-  transition: all 500ms ease-in-out;
+  transition: all .3s ease-in-out;
 }
-#trakt:hover {
+#codecademy:hover {
   fill:#204057;
+}
+#coursera {
+  fill:#777;
+  width:1.2em;
+  height:.6em;
+  display:inline-block;
+  transition: all .3s ease-in-out;
+}
+#coursera:hover {
+  fill:#208cef;
 }
 
 /* MENU */
