@@ -115,7 +115,7 @@ li:last-child { padding: 0; }
   transition: all 500ms ease-in-out;
 }
 #trakt:hover {
-  fill:red;
+  fill:#204057;
 }
 
 /* MENU */
