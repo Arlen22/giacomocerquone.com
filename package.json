@@ -1,0 +1,22 @@
+{
+  "name": "giacomocerquone.com",
+  "version": "1.0.0",
+  "description": "My website",
+  "scripts": {
+    "start": "concurrently \"npm run browsersync\" \"npm run watch\" ",
+    "watch": "onchange \"src/**/*.*\" -- npm run build",
+    "build": "npm run build:js",
+    "build:js": "uglifyjs src/js/script.js --compress --mangle --output assets/js/script.min.js",
+    "browsersync": "browser-sync start --no-notify --server --files \"assets/css/*.css\" \"assets/js/*.js\" \"index.html\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giacomocerquone/giacomocerquone.com.git"
+  },
+  "author": "Giacomo Cerquone <cerquone96@hotmail.it> (http://giacomocerquone.com)",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "onchange": "^2.5.0",
+    "uglify-js": "^2.6.2"
+  }
+}
