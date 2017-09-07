@@ -18,7 +18,6 @@ ga('send', 'pageview');
       main.style.transform = 'translateX(-16em)';
       burgerIcon.classList.add('fa-times');
       burgerIcon.classList.remove('fa-bars');
-      burgerMenu.style.right = '-.2em';
     } else {
       header.style.right = '-16em';
       main.style.transform = 'translateX(0em)';
