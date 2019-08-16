@@ -1,0 +1,11 @@
+.title {
+  box-shadow: none;
+  color: #555;
+  text-decoration: inherit;
+  background-image: inherit;
+  transition: color 0.1s ease-in;
+}
+
+.title:hover {
+  color: #4075c3;
+}

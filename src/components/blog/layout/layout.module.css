@@ -1,0 +1,30 @@
+.credits {
+  border-top: 1px solid rgba(22, 36, 54, 0.1);
+  padding: 3rem 0 1rem 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.icon {
+  width: 3em;
+  height: 3em;
+  font-size: 1em;
+  color: #ebf2f6;
+  border-radius: 100%;
+  border: 1px solid #ebf2f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin: 0 auto;
+  transition: box-shadow 0.5s, color 0.5s, background 0.5s;
+  text-align: center;
+  position: relative;
+  background: #fff;
+  bottom: -1.6em;
+}
+
+.icon:hover {
+  box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.5);
+  color: #777;
+}

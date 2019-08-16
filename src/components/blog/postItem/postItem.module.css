@@ -1,0 +1,35 @@
+.post:not(:last-child) {
+  margin: 0 0 4em 0;
+}
+
+.post {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.post small {
+  text-transform: uppercase;
+  color: #777;
+}
+
+.postTitle {
+  box-shadow: none;
+  color: #555;
+  text-decoration: inherit;
+  background-image: inherit;
+  transition: color 0.1s ease-in;
+}
+
+.postTitle:hover {
+  color: #4075c3;
+}
+
+.postThumb {
+}
+
+.content {
+  margin-left: 2em;
+  flex: 1;
+}

@@ -10,6 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
+          filter: { fileAbsolutePath: { regex: "/(blog)/.*md$/" } }
           limit: 1000
         ) {
           edges {
@@ -54,11 +55,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
+    if (!node.fileAbsolutePath.includes("content/home/")) {
+      console.log(node, getNode)
+      const value = createFilePath({ node, getNode })
+      createNodeField({
+        name: `name`,
+        node,
+        value,
+      })
+    }
   }
 }
