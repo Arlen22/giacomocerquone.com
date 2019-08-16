@@ -56,7 +56,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     if (!node.fileAbsolutePath.includes("content/home/")) {
-      console.log(node, getNode)
       const value = createFilePath({ node, getNode })
       createNodeField({
         name: `name`,
