@@ -31,12 +31,22 @@
   flex: 1;
 }
 
+.postThumb {
+  height: 10em !important;
+  width: 15em !important;
+  border-radius: 1em;
+}
+
 @media screen and (max-width: 768px) {
   .post {
     flex-direction: column;
   }
-
-  .imgWrapper {
-    flex: none !important;
+  .content {
+    margin-left: auto;
+    margin-top: 0.5em;
+  }
+  .postThumb {
+    height: 14em !important;
+    width: 95% !important;
   }
 }

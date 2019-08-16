@@ -12,13 +12,7 @@ function PostItem({ fields, frontmatter }) {
       <Image
         fixed={frontmatter.image.childImageSharp.fixed}
         alt={frontmatter.imageAlt}
-        style={{
-          height: "10em",
-          width: "25em",
-          borderRadius: "1em",
-          flex: 0.5,
-        }}
-        className={styles.imgWrapper}
+        className={styles.postThumb}
       />
       <div className={styles.content}>
         <header>
