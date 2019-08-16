@@ -26,10 +26,17 @@
   color: #4075c3;
 }
 
-.postThumb {
-}
-
 .content {
   margin-left: 2em;
   flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    flex-direction: column;
+  }
+
+  .imgWrapper {
+    flex: none !important;
+  }
 }

@@ -22,7 +22,7 @@ export default function BlogLayout({ children }) {
         {children}
       </main>
       <footer
-        style={{ textAlign: "center", fontSize: ".7em", lineHeight: "1.2em" }}
+        style={{ textAlign: "center", fontSize: ".8em", lineHeight: "1.2em" }}
       >
         <a href="#title" className={styles.icon}>
           <FontAwesomeIcon size="lg" icon={faArrowUp} />

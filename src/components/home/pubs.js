@@ -6,7 +6,7 @@ function Pubs({ content }) {
       <header>
         <h2>{content.frontmatter.title}</h2>
       </header>
-      <p dangerouslySetInnerHTML={{ __html: content.html }} />
+      <div dangerouslySetInnerHTML={{ __html: content.html }} />
     </section>
   )
 }

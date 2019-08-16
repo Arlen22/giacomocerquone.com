@@ -69,7 +69,7 @@ module.exports = {
         short_name: `GC Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#666`,
+        theme_color: `#555`,
         display: `minimal-ui`,
         icon: `content/assets/logo.png`,
       },

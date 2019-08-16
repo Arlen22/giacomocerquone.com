@@ -9,18 +9,17 @@ function PostItem({ fields, frontmatter }) {
   const title = frontmatter.title || fields.slug
   return (
     <article className={styles.post}>
-      {frontmatter.image && (
-        <Image
-          fixed={frontmatter.image.childImageSharp.fixed}
-          alt={frontmatter.imageAlt}
-          style={{
-            height: "10em",
-            maxWidth: "25em",
-            borderRadius: "1em",
-            flex: 0.5,
-          }}
-        />
-      )}
+      <Image
+        fixed={frontmatter.image.childImageSharp.fixed}
+        alt={frontmatter.imageAlt}
+        style={{
+          height: "10em",
+          width: "25em",
+          borderRadius: "1em",
+          flex: 0.5,
+        }}
+        className={styles.imgWrapper}
+      />
       <div className={styles.content}>
         <header>
           <small>{frontmatter.date}</small>
