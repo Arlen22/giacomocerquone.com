@@ -1,11 +1,11 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/blog/layout/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-export default function BlogPostTemplate({ pageContext, data }) {
+export default function BlogPostTemplate({ pageContext, data, location }) {
   const post = data.markdownRemark
   const { previous, next } = pageContext
   return (
@@ -14,6 +14,7 @@ export default function BlogPostTemplate({ pageContext, data }) {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image.childImageSharp.fixed.src}
+        location={location}
       />
       <h1
         style={{

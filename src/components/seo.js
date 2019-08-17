@@ -9,6 +9,7 @@ function SEO({
   title,
   noTemplate,
   type,
+  location,
   image = "https://www.gravatar.com/avatar/a244447940601d3cf55d27c7278ce446?s=200",
 }) {
   const { site } = useStaticQuery(
@@ -26,7 +27,6 @@ function SEO({
   )
 
   const metaDescription = description || site.siteMetadata.description
-
   return (
     <Helmet
       htmlAttributes={{
@@ -42,6 +42,10 @@ function SEO({
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          property: `og:url`,
+          content: location.href,
         },
         {
           property: `og:description`,
