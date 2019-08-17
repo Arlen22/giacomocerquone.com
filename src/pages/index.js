@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import Header from "../components/home/header/header"
 import Pubs from "../components/home/pubs"
 
-export default function SiteIndex() {
+export default function SiteIndex({ location }) {
   const {
     allMarkdownRemark,
     site: { siteMetadata },
@@ -43,6 +43,7 @@ export default function SiteIndex() {
       <SEO
         title={siteMetadata.title}
         description={siteMetadata.description}
+        location={location}
         noTemplate
       />
       <Header />
