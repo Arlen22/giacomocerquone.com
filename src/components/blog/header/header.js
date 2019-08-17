@@ -38,7 +38,7 @@ export default function Header() {
         <img
           style={{ borderRadius: ".5em", alignSelf: "center", margin: 0 }}
           src="https://www.gravatar.com/avatar/a244447940601d3cf55d27c7278ce446?s=60"
-          alt={siteMetadata.author}
+          alt=""
         />
         <h4 style={{ margin: "0 .5em", color: "#333" }}>
           <Link to="/" className={styles.title}>

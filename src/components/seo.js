@@ -45,7 +45,7 @@ function SEO({
         },
         {
           property: `og:url`,
-          content: location.href,
+          content: location && location.href,
         },
         {
           property: `og:description`,

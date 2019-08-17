@@ -29,7 +29,7 @@ export default function BlogLayout({ children }) {
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <FontAwesomeIcon size="lg" icon={faArrowUp} />
+          <FontAwesomeIcon size="lg" icon={faArrowUp} title="arrow up" />
         </button>
         <p className={styles.credits}>
           Crafted with <span style={{ color: "#bb1a34" }}>❤</span> by me

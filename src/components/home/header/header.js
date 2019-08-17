@@ -49,7 +49,11 @@ export default function Header() {
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/giacomocerquone"
           >
-            <FontAwesomeIcon size="lg" icon={faLinkedinIn} />
+            <FontAwesomeIcon
+              size="lg"
+              icon={faLinkedinIn}
+              title="linkedin profile"
+            />
           </a>
         </li>
         <li>
@@ -59,7 +63,7 @@ export default function Header() {
             href="https://github.com/giacomocerquone/"
             className={styles.gh}
           >
-            <FontAwesomeIcon size="lg" icon={faGithub} />
+            <FontAwesomeIcon size="lg" icon={faGithub} title="github profile" />
           </a>
         </li>
         <li>
@@ -69,7 +73,11 @@ export default function Header() {
             href="https://stackoverflow.com/users/2809729/giacomo-cerquone"
             className={styles.so}
           >
-            <FontAwesomeIcon size="lg" icon={faStackOverflow} />
+            <FontAwesomeIcon
+              size="lg"
+              icon={faStackOverflow}
+              title="stackoverflow profile"
+            />
           </a>
         </li>
         <li>
@@ -79,7 +87,11 @@ export default function Header() {
             href="https://facebook.com/giacomocerquone"
             className={styles.fb}
           >
-            <FontAwesomeIcon size="lg" icon={faFacebook} />
+            <FontAwesomeIcon
+              size="lg"
+              icon={faFacebook}
+              title="facebook profile"
+            />
           </a>
         </li>
       </ul>
