@@ -35,7 +35,7 @@ export default function BlogIndex({ location }) {
               image {
                 childImageSharp {
                   fixed(width: 450) {
-                    ...GatsbyImageSharpFixed
+                    ...GatsbyImageSharpFixed_tracedSVG
                   }
                 }
               }
