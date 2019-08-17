@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ["airbnb"],
+  extends: ["airbnb", "plugin:prettier/recommended", "prettier/react"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "/blog/aborting-fetch-react-native": [0],
+    "react/jsx-filename-extension": [0],
+    "react/prop-types": [0],
   },
 }
