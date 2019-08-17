@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-66906230-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -67,7 +67,7 @@ module.exports = {
         short_name: `gcerquone`,
         start_url: `/blog`,
         background_color: `#ffffff`,
-        theme_color: `#555`,
+        theme_color: `#124`,
         display: `fullscreen`,
         icon: `content/assets/logo.png`,
       },

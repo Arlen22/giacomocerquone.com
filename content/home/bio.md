@@ -1,8 +1,10 @@
 ---
-title: Who Am I?
+title: 
 section: "bio"
 ---
 
-Computer science student, software developer focused on front-end web developing with 2+ work experience as freelance. Javascript addicted, striving for fast and efficient code. Plus cinephile, astronomy lover and passionate about new technologies and tasty teas.
+I love computer science and making beatiful programs.
+I have a computer science bachelor degree and 2 years of work experience as a remote freelancer.
+Cinephile, astronomy lover, coffe and tea enthusiast and passionate about new technologies.
 <br>
 **Writer** and **Admin** @[italiancoders.it](https://italiancoders.it/author/giacomo-cerquone/) and @[giacomocerquone.com](https://giacomocerquone.com/blog)

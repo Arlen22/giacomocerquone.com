@@ -24,9 +24,12 @@ export default function BlogLayout({ children }) {
       <footer
         style={{ textAlign: "center", fontSize: ".8em", lineHeight: "1.2em" }}
       >
-        <a href="#title" className={styles.icon}>
+        <button
+          className={styles.icon}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <FontAwesomeIcon size="lg" icon={faArrowUp} />
-        </a>
+        </button>
         <p className={styles.credits}>
           Crafted with <span style={{ color: "#bb1a34" }}>❤</span> by me
           <br />©{new Date().getFullYear()}
