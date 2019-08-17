@@ -8,14 +8,16 @@ import { rhythm, scale } from "../utils/typography"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const { blogTitle, author, description } = this.props.data.site.siteMetadata
     const { previous, next } = this.props.pageContext
-
+    console.log(post.frontmatter.image)
     return (
-      <Layout location={this.props.location} title={blogTitle}>
+      <Layout>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          image={
+            window.location.host + post.frontmatter.image.childImageSharp.fixed.src
+          }
         />
         <h1
           style={{
@@ -88,6 +90,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        image {
+          childImageSharp {
+            fixed(width: 450) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     }
   }

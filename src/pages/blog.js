@@ -14,6 +14,7 @@ export default function BlogIndex({ location }) {
       site {
         siteMetadata {
           blogTitle
+          description
         }
       }
       allMarkdownRemark(
@@ -33,7 +34,7 @@ export default function BlogIndex({ location }) {
               imageAlt
               image {
                 childImageSharp {
-                  fixed(width: 800) {
+                  fixed(width: 450) {
                     ...GatsbyImageSharpFixed
                   }
                 }
@@ -49,7 +50,7 @@ export default function BlogIndex({ location }) {
 
   return (
     <Layout>
-      <SEO title={siteMetadata.blogTitle} noTemplate />
+      <SEO title={siteMetadata.blogTitle} noTemplate description={siteMetadata.description} />
       {posts.map(({ node }) => {
         return (
           <PostItem

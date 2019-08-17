@@ -9,8 +9,17 @@ import Header from "../components/home/header/header"
 import Pubs from "../components/home/pubs"
 
 export default function SiteIndex({ location }) {
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const {
+    allMarkdownRemark,
+    site: { siteMetadata },
+  } = useStaticQuery(graphql`
     query SiteIndexQuery {
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { fileAbsolutePath: { regex: "/(home)/.*md$/" } }
@@ -30,8 +39,12 @@ export default function SiteIndex({ location }) {
   const { edges: sections } = allMarkdownRemark
 
   return (
-    <Layout location={location}>
-      <SEO noTemplate />
+    <Layout>
+      <SEO
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+        noTemplate
+      />
       <Header />
       <Bio
         content={

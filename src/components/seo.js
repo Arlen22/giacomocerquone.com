@@ -2,7 +2,15 @@ import React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, noTemplate }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  title,
+  noTemplate,
+  type,
+  image = "https://www.gravatar.com/avatar/a244447940601d3cf55d27c7278ce446?s=200",
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -41,7 +49,11 @@ function SEO({ description, lang, meta, title, noTemplate }) {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type || "website",
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           name: `twitter:card`,
@@ -54,6 +66,10 @@ function SEO({ description, lang, meta, title, noTemplate }) {
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
         },
         {
           name: `twitter:description`,
