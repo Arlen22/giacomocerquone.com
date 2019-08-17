@@ -5,7 +5,7 @@ import Layout from "../components/blog/layout/layout"
 import SEO from "../components/seo"
 import PostItem from "../components/blog/postItem/postItem"
 
-export default function BlogIndex({ location }) {
+export default function BlogIndex() {
   const {
     site: { siteMetadata },
     allMarkdownRemark,
@@ -50,7 +50,11 @@ export default function BlogIndex({ location }) {
 
   return (
     <Layout>
-      <SEO title={siteMetadata.blogTitle} noTemplate description={siteMetadata.description} />
+      <SEO
+        title={siteMetadata.blogTitle}
+        noTemplate
+        description={siteMetadata.description}
+      />
       {posts.map(({ node }) => {
         return (
           <PostItem

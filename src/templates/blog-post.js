@@ -5,30 +5,8 @@ import Layout from "../components/blog/layout/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-export default function BlogPostTemplate({ pageContext }) {
-  const { markdownRemark } = useStaticQuery(graphql`
-    query BlogPostBySlug($slug: String!) {
-      markdownRemark(fields: { slug: { eq: $slug } }) {
-        id
-        excerpt(pruneLength: 160)
-        html
-        frontmatter {
-          title
-          date(formatString: "MMMM DD, YYYY")
-          description
-          image {
-            childImageSharp {
-              fixed(width: 450) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const post = markdownRemark
+export default function BlogPostTemplate({ pageContext, data }) {
+  const post = data.markdownRemark
   const { previous, next } = pageContext
   return (
     <Layout>
@@ -88,3 +66,25 @@ export default function BlogPostTemplate({ pageContext }) {
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        image {
+          childImageSharp {
+            fixed(width: 450) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    }
+  }
+`

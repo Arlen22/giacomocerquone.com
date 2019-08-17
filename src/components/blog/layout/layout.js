@@ -26,6 +26,7 @@ export default function BlogLayout({ children }) {
       >
         <button
           className={styles.icon}
+          type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <FontAwesomeIcon size="lg" icon={faArrowUp} />

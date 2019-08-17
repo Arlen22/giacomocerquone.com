@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import Header from "../components/home/header/header"
 import Pubs from "../components/home/pubs"
 
-export default function SiteIndex({ location }) {
+export default function SiteIndex() {
   const {
     allMarkdownRemark,
     site: { siteMetadata },

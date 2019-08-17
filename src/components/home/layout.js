@@ -16,8 +16,12 @@ export default function HomeLayout({ children }) {
         {children}
       </main>
       <footer
-        style={{ textAlign: "center", fontSize: ".8em", lineHeight: "1.2em",  padding: '0rem 0 2rem 0'
-      }}
+        style={{
+          textAlign: "center",
+          fontSize: ".8em",
+          lineHeight: "1.2em",
+          padding: "0rem 0 2rem 0",
+        }}
       >
         Crafted with <span style={{ color: "#bb1a34" }}>❤</span> by me ©
         {new Date().getFullYear()}

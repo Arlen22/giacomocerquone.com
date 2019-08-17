@@ -3,7 +3,7 @@ import oceanBeachTheme from "typography-theme-ocean-beach"
 
 const linkColor = "#039be5"
 
-oceanBeachTheme.overrideThemeStyles = ({ rhythm }, options) => ({
+oceanBeachTheme.overrideThemeStyles = () => ({
   a: {
     color: linkColor,
     backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, ${linkColor} 1px, ${linkColor} 2px, rgba(0, 0, 0, 0) 2px)`, // eslint-disable-line
@@ -38,5 +38,5 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale
+export const { rhythm } = typography
+export const { scale } = typography
