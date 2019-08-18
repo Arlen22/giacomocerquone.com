@@ -4,12 +4,14 @@ date: 2019-08-11 20:59:47
 description: An handy thin fetch wrapper in less of 100 lines featuring abortion (with polyfill for non supporting envs), token setter etc.
 image: "./wrapped-chocolate.jpg"
 slug: blog/fetch-wrapper
+draft: true
 ---
 
 Hi there, hope you're enjoying the new website and blog.
 I graduated one month ago and so I hope I'll have some more time to dedicate to my personal stuff, including this blog.
 
 ## What is a wrapper
+
 We obtain many different results when "wrapping" something: there are wrappers that turns out to be libraries and wrappers that are so small that they're just an agglomerated amount of code that simplify other's lives. Mine is one of the second kind.<br>
 I wanted to make this clear because I've seen projects like [this](https://github.com/elbywan/wretch) that are defined as wrappers but, despite the fact that it has no dependencies included, it has so many features and imposes so much syntax\* and structures that it isn't just a wrapper anymore, but a small lib.
 

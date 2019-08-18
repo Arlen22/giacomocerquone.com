@@ -28,6 +28,7 @@ export default function BlogIndex({ location }) {
               slug
             }
             frontmatter {
+              draft
               date(formatString: "MMMM DD, YYYY")
               title
               description
@@ -58,11 +59,14 @@ export default function BlogIndex({ location }) {
       />
       {posts.map(({ node }) => {
         return (
-          <PostItem
-            frontmatter={node.frontmatter}
-            fields={node.fields}
-            key={node.fields.slug}
-          />
+          (!node.frontmatter.draft ||
+            process.env.NODE_ENV === "development") && (
+            <PostItem
+              frontmatter={node.frontmatter}
+              fields={node.fields}
+              key={node.fields.slug}
+            />
+          )
         )
       })}
     </Layout>

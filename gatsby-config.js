@@ -5,6 +5,8 @@ module.exports = {
     author: `Giacomo Cerquone`,
     description: `Giacomo Cerquone, developer`,
     siteUrl: `https://giacomocerquone.com`,
+    repoUrl:
+      "https://github.com/giacomocerquone/giacomocerquone.com/tree/master/content/blog",
   },
   plugins: [
     {

@@ -17,6 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                dir
               }
               frontmatter {
                 title
@@ -43,6 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: post.node.fields.slug,
       component: blogPost,
       context: {
+        dir: post.node.fields.dir,
         slug: post.node.fields.slug,
         previous,
         next,
@@ -58,7 +60,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (!node.fileAbsolutePath.includes("content/home/")) {
       const value = createFilePath({ node, getNode })
       createNodeField({
-        name: `name`,
+        name: `dir`,
         node,
         value,
       })

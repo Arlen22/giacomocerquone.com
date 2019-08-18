@@ -7,7 +7,9 @@ import { rhythm, scale } from "../utils/typography"
 
 export default function BlogPostTemplate({ pageContext, data, location }) {
   const post = data.markdownRemark
-  const { previous, next } = pageContext
+  const { siteMetadata } = data.site
+  const { previous, next, dir } = pageContext
+  console.log(location)
   return (
     <Layout>
       <SEO
@@ -34,12 +36,29 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
         {post.frontmatter.date}
       </p>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div style={{ marginBottom: "3em" }}>
+        <a
+          href={`https://mobile.twitter.com/search?q=${location &&
+            location.href}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discuss on Twitter
+        </a>{" "}
+        •{" "}
+        <a
+          href={`${siteMetadata.repoUrl + dir.slice(0, -1)}.md`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Edit on Github
+        </a>
+      </div>
       <hr
         style={{
           marginBottom: rhythm(1),
         }}
       />
-
       <ul
         style={{
           display: `flex`,
@@ -70,6 +89,11 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        repoUrl
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
