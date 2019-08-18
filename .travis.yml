@@ -13,6 +13,7 @@ deploy:
   on:
     branch: gh-pages
 before_script:
+  - "npm i"
   - "npm i -g gatsby"
 script:
-  - "npm run deploy"
+  - "npm build"
