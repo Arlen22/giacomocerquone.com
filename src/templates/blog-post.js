@@ -9,7 +9,6 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
   const post = data.markdownRemark
   const { siteMetadata } = data.site
   const { previous, next, dir } = pageContext
-  console.log(location)
   return (
     <Layout>
       <SEO
