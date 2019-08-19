@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 import Header from "../components/home/header/header"
 import Pubs from "../components/home/pubs"
+import LastPosts from "../components/home/lastPosts"
 
 export default function SiteIndex({ location }) {
   const {
@@ -21,23 +22,25 @@ export default function SiteIndex({ location }) {
         }
       }
       allMarkdownRemark(
+        limit: 5
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fileAbsolutePath: { regex: "/(home)/.*md$/" } }
       ) {
         edges {
           node {
+            fileAbsolutePath
             html
             frontmatter {
               title
               section
+              slug
+              description
             }
           }
         }
       }
     }
   `)
-  const { edges: sections } = allMarkdownRemark
-
+  const { edges } = allMarkdownRemark
   return (
     <Layout>
       <SEO
@@ -49,12 +52,17 @@ export default function SiteIndex({ location }) {
       <Header />
       <Bio
         content={
-          sections.find(post => post.node.frontmatter.section === "bio").node
+          edges.find(post => post.node.frontmatter.section === "bio").node
         }
+      />
+      <LastPosts
+        edges={edges.filter(edge =>
+          /(blog)\/.*md/.test(edge.node.fileAbsolutePath)
+        )}
       />
       <Pubs
         content={
-          sections.find(post => post.node.frontmatter.section === "pubs").node
+          edges.find(post => post.node.frontmatter.section === "pubs").node
         }
       />
     </Layout>
