@@ -10,8 +10,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
-  on:
-    branch: gh-pages
+  target_branch: gh-pages
 before_script:
   - "npm i"
   - "npm i -g gatsby"
