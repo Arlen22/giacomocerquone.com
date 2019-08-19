@@ -12,7 +12,6 @@ deploy:
   keep-history: true
   target_branch: gh-pages
 before_script:
-  - "npm i"
   - "npm i -g gatsby"
 script:
-  - "npm build"
+  - "npm run build"
