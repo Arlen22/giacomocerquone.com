@@ -24,6 +24,7 @@ export default function SiteIndex({ location }) {
       allMarkdownRemark(
         limit: 5
         sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { draft: { ne: true } } }
       ) {
         edges {
           node {
