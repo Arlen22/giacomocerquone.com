@@ -35,7 +35,7 @@ export default function BlogIndex({ location }) {
               imageAlt
               image {
                 childImageSharp {
-                  fixed(width: 450) {
+                  fixed(width: 900) {
                     ...GatsbyImageSharpFixed_tracedSVG
                   }
                 }
