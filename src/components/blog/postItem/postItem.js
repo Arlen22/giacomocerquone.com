@@ -9,11 +9,13 @@ function PostItem({ fields, frontmatter }) {
   const title = frontmatter.title || fields.slug
   return (
     <article className={styles.post}>
-      <Image
-        fixed={frontmatter.image.childImageSharp.fixed}
-        alt={frontmatter.imageAlt}
-        className={styles.postThumb}
-      />
+      {frontmatter.image && (
+        <Image
+          fixed={frontmatter.image.childImageSharp.fixed}
+          alt={frontmatter.imageAlt}
+          className={styles.postThumb}
+        />
+      )}
       <div className={styles.content}>
         <header>
           <small>{frontmatter.date}</small>

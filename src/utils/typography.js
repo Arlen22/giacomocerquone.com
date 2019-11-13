@@ -17,10 +17,11 @@ oceanBeachTheme.overrideThemeStyles = () => ({
     fontSize: "3em",
   },
   h2: {
-    color: "#777",
+    color: "#555",
   },
   h3: {
-    color: "#888",
+    fontSize: "1.2em",
+    color: "#555",
   },
   p: {
     color: "#666",
