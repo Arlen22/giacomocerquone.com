@@ -72,6 +72,13 @@ module.exports = {
         theme_color: `#124`,
         display: `fullscreen`,
         icon: `content/assets/logo.png`,
+        icons: [
+          {
+            src: `content/assets/logo-42x42.png`,
+            sizes: `48x48`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     `gatsby-plugin-offline`,
