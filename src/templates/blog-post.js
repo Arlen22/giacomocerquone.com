@@ -40,8 +40,7 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <div style={{ marginBottom: "3em" }}>
         <a
-          href={`https://mobile.twitter.com/search?q=${location &&
-            location.href}`}
+          href={`https://mobile.twitter.com/search?q=${siteMetadata.siteUrl}/${post.frontmatter.slug}`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -94,6 +93,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         repoUrl
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -101,6 +101,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        slug
         title
         date(formatString: "MMMM DD, YYYY")
         description

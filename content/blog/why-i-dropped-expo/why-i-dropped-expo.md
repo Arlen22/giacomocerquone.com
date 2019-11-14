@@ -12,8 +12,8 @@ For one of the last I also needed a personalized component that required some tw
 
 ## Disclaimer
 
-The whole article isn't made to go against passionate people and people who really believe in what they do (eg the Expo team). People that I find very skilled and that I personally follow on social.
-The last thing I want to do is to discredit their work! They are awesome people and developers but as every product, Expo has its own reviews too and with this article I'll give mine based on my little experience.
+The whole article isn't made to go against people who are passionate about what they do and believe in their projects like the Expo team.
+The last thing I want to do is to discredit their work! They are awesome people and developers but, as every product, Expo gets its own reviews too and with this I'll give mine based on my little experience.
 
 ### Who is this post for
 
@@ -52,9 +52,9 @@ Not that I'm leaving expo because I have encountered technical problems with it,
 - Requesting permissions you'll never use, IDFA and other bad stuff [almost no one talk about](https://github.com/expo/expo/issues/1138).
 
 
-## Ejecting? No thanks. I build from the ground up
+## Ejecting? No thanks. Better building from the ground up
 
-This post was born from the needs to completely detach, but in the real meaning of the word, from expo in a client's project.
+This post was born from the needs to completely detach, but in the real meaning of the word, an app from expo for a client's project.
 Using the `expo eject` command is something I completely discourage. It's something that even they are dismissing in favour of unimodules (more on later) and that will give you more headaches than directly porting back the entire app in a new bare react native project.
 
 ## The things I love of Expo and tried to bring to the native side
