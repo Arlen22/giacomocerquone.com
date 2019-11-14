@@ -10,7 +10,7 @@ function SEO({
   noTemplate,
   type,
   location,
-  image = "https://www.gravatar.com/avatar/a244447940601d3cf55d27c7278ce446?s=200",
+  image,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -20,6 +20,7 @@ function SEO({
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -27,6 +28,10 @@ function SEO({
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const img = image
+    ? `${site.siteMetadata.siteUrl}${image}`
+    : "https://www.gravatar.com/avatar/a244447940601d3cf55d27c7278ce446?s=200"
+
   return (
     <Helmet
       htmlAttributes={{
@@ -57,7 +62,7 @@ function SEO({
         },
         {
           property: `og:image`,
-          content: image,
+          content: img,
         },
         {
           name: `twitter:card`,
@@ -73,7 +78,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: img,
         },
         {
           name: `twitter:description`,
