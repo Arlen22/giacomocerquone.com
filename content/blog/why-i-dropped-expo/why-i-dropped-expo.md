@@ -2,10 +2,9 @@
 title: Why I Dropped Expo and embraced React Native
 date: 2019-11-09 21:00:00
 description: What are the main problems with Expo at this time? And what can be the advantages of using a pure React Native workflow?
-image: "./closed-connection.jpg"
-imageAlt: market closed sign
+image: "./why-i-dropped-expo.jpg"
+imageAlt: gears bare metal
 slug: blog/why-i-dropped-expo-and-embraced-react-native
-draft: true
 ---
 
 As some of you may know, I'm currently working as a freelancer in React Native and constantly shipping and curating some apps. I may not have created 100+ apps like this guy on [dev.to](https://dev.to/kylessg/ive-released-over-100-apps-in-react-native-since-2015-ask-me-anything-1m9g), but I made quite a few of them and all were data centric with lots of screens and user inputs handling (we don't like simple challenges right?).
