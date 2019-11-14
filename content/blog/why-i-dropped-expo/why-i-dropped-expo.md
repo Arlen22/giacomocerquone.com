@@ -21,8 +21,8 @@ Having said that, things will surely change and opinions too. Plus we all might 
 
 - Has always used expo and is forced to abandon it because of some requirements at work
 - Wants to discover the internals of the framework
-- Like me has been scared by the first versions of the framework
-- Is tired of something in the epxo ecosystem
+- Like me has been scared by the first versions of the framework and he's thinking to retry it
+- Is tired of something in the expo ecosystem
 
 ## From the beginning
 
