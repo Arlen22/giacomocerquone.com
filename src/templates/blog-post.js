@@ -14,7 +14,10 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        image={post.image && post.image.childImageSharp.fixed.src}
+        image={
+          post.frontmatter.image &&
+          post.frontmatter.image.childImageSharp.fixed.src
+        }
         location={location}
       />
       <h1
