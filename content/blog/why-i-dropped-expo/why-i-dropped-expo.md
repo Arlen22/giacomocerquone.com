@@ -1,6 +1,6 @@
 ---
 title: Why I Dropped Expo and embraced React Native
-date: 2019-11-09 21:00:00
+date: 2019-11-14 08:00:00
 description: What are the main problems with Expo at this time? And what can be the advantages of using a pure React Native workflow?
 image: "./why-i-dropped-expo.jpg"
 imageAlt: gears bare metal
