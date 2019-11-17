@@ -1,8 +1,8 @@
 ---
 title: Microsoft CodePush Integration in React Native 0.60+
-date:
+date: 2019-11-21 09:00:00
 description: Microsoft CodePush is a powerful tool but can be very exhausting to configure. Let's cycle over the necessary details
-image:
+image: ./fast-city.jpg
 imageAlt: fast night city lights
 slug: blog/microsoft-codepush-integration-in-react-native-0.60
 draft: true
