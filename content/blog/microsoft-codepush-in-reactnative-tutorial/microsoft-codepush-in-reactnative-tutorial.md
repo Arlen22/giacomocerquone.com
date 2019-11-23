@@ -1,6 +1,6 @@
 ---
 title: Microsoft CodePush Integration in React Native 0.60+
-date: 2019-11-21 09:00:00
+date: 2019-11-25 09:00:00
 description: Microsoft CodePush is a powerful tool but can be very exhausting to configure. Let's cycle over the necessary details
 image: ./fast-city.jpg
 imageAlt: fast night city lights
@@ -39,7 +39,9 @@ the following
 
 ## Important CLI commands
 
-Now an handy collection of the main useful commands you can refer to
+Let's see an handy collection of the main useful commands you can refer to <br/>
+
+_NOTICE: Microsoft calls it deploymentName, it is also often referred to as lanes, product flavors, build schemes and they indicate some sort of specific configuration of your app: stage, dev, production, production-IT ecc._
 
 ```
 DEPLOY (to a deployment name)
