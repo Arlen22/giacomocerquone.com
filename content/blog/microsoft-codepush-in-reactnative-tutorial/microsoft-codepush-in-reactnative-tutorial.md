@@ -9,57 +9,100 @@ draft: true
 ---
 
 The world has been spinning pretty fast lately, hasn't it?
-In the development process what we're used to call "**continuous delivery**" is what allowed us, as end users, to perceive changes in a blazingly fast way and it's what allows us, as developers, to push fixes and new features faster to the end user.
+In the development process what we're used to call "**continuous delivery**" is what allowed us, as end users, to perceive changes in a blazingly fast way and it's what allows us, as developers, to **push fixes** and new features faster to the end user.
 You'll find so many articles about it and maybe you still are figuring out what it really is but remember, these apparently abstract and hard to follow concepts that pops up here and there nowadays always boil down somehow to something practical: a tool, a service or an architecture that let you do something.
 
 But how can we effectively do this in the world of mobile development? Through **over-the-air** udpates.
-It's the ability of an app to receive bugfixes and new features that can be applied at runtime and refresh the experience to the user. This means no store approval, no build time and lots of other simplifications.
+It's the ability of an app to receive bugfixes and features that can be **applied at runtime** and refresh the user experience. This means no store approval, no build time and lots of other simplifications.
 
 ## General inner working
 
 Clearly I won't talk about other platforms, but OTA updates aren't possible on every framework due to their different inner workings.
-In React Native we are "required" to build a **JavaScript bundle** in order to produce a production app. That js bundle, called index.android.bundle in Android and main.jsbundle in iOS, is bundled within the aab/apk/ipa and then the Java/Obj-C code of React Native will "just" talk to that.
-So how are OTA delivered? Simple, replacing that bundle, when certain conditions are met, through a native linked library and restarting the execution of that bundle at runtime.
+In React Native we are "required" to build a **JavaScript bundle** in order to produce a production app. That js bundle, called index.android.bundle in Android and main.jsbundle in iOS, is bundled within the aab/apk/ipa and then the Java/Obj-C code of our React Native app will use it.
+So how are OTA delivered? Simple, replacing that bundle, when certain conditions are met, through a native linked library that restarts the execution of that bundle at runtime.
 
-Now understanding how something works is the only way you can improve yourself and become as independent as possible. I might also have tempted a personal implementation of this mechanism, but it'd be silly since we have Microsoft CodePush: a tool, inside the app center, made exactly to deliver OTA updates.
+Now **understanding how something works** is the only way you can **improve yourself** and become as independent as possible. I might also have tempted a personal implementation of this mechanism, but it'd be silly since we have **Microsoft CodePush**: a tool, inside the app center, made exactly to deliver OTA updates.
 
 ## Configuration
 
 Online resources are a bit scarse on how to:
 
+- Use the [appcenter.ms](http://appcenter.ms/apps) website dashboard
 - Properly configure this library
-- How to use the appcenter cli
-- How to use the [appcenter.ms](http://appcenter.ms/) website dashboard
+- Use the appcenter cli
 
 There is a [huge unhandy microsoft documentation](https://docs.microsoft.com/en-us/appcenter/) about it, but at the same time it's possible to find many commands out in the wild of the old version of the cli that don't works anymore.
 
-## Linking
+## Configure the app in the App Center dashboard
 
-the following
+There shouldn't be the need of explaining how the app should be set up on the App Center dashboard but, turns out, there is a very peculiar thing I discovered and so I decided to walk you step by step in this.
+
+Basically you can't configure a single app (and therefore use a single key) to release updates to both your Android and iOS apps. **You must configure two apps targeting two different OS**. This is confusing also because an old version of the cli allowed to specify multiple OS of a single app when releasing the updates.
+
+_NOTE: in the docs this is taken for granted and nowhere seems to be mentioned, the only warning you can find is this and it doesn't tell us much_
+
+![App Center Warning](./appcenter-warning.jpg)
+
+## Linking and JS implementation
+
+The entire library is going under heavy maintenance and for this reason something may be a bit outdated and something else might be missing: **no hooks support**, **no autolinking support**.
+
+Since this library doesn't support autolinking, when installed you must launch **react-native link react-native-code-push** and it will ask you for one of the key retrieved at the previous step.
+My advice here is:
+
+- Write it in the terminal while linking if you know you'll just use one deployment key for your app (the key relative to the _Production_ deployment name for example).
+- Leave it empty if you plan to use various deployments (_Production_, _Staging_ ecc.) in order to effectively handle the keys from the js side.
 
 ## Important CLI commands
 
 Let's see an handy collection of the main useful commands you can refer to <br/>
 
-_NOTICE: Microsoft calls it deploymentName, it is also often referred to as lanes, product flavors, build schemes and they indicate some sort of specific configuration of your app: stage, dev, production, production-IT ecc._
+_NOTE: Microsoft calls it deployment name (or simply deployment), it is also often referred to as lanes, product flavors, build schemes or also specific deploy and they indicate some sort of specific configuration of your app: stage, dev, production, production-IT ecc._
+
+#### DEPLOY (to a deployment name)
 
 ```
-DEPLOY (to a deployment name)
-appcenter codepush release-react -a <owner>/<appName> -d <deploymentName> -t vesion
+appcenter codepush release-react -a <owner>/<appName> -d <deploymentName> -t <version>
+```
 
-LIST APPS FOR CURRENT USER
+#### LIST APPS FOR CURRENT USER
+
+```
 appcenter apps list
-
-ADD A DEPLOYMENT (to an app)
-appcenter codepush deployment add -a {owner}/{appName} Staging
-
-LIST DEPLOYMENTS AND KEYS (of an app)
-appcenter codepush deployment list -a {owner}/{appName} --displayKeys
-
-DELETE ALL EXISTING DEPLOYS (of a deployment name)
-appcenter codepush deployment clear -a <ownerName>/<appName> <deploymentName>
-
-DELETE A SPECIFIC DEPLOY (of a deployment name)
 ```
+
+#### ADD A DEPLOYMENT NAME (to an app)
+
+```
+appcenter codepush deployment add -a {owner}/{appName} <deploymentName>
+```
+
+#### LIST DEPLOYMENT NAMES AND KEYS (of an app)
+
+```
+appcenter codepush deployment list -a {owner}/{appName} --displayKeys
+```
+
+#### DELETE ALL EXISTING RELEASES (of a deployment name)
+
+```
+appcenter codepush deployment clear -a <ownerName>/<appName> <deploymentName>
+```
+
+#### UNDO LAST RELEASE (of a deployment name)
+
+```
+appcenter codepush rollback -a <owner-name>/<app-name> <deploymentName>
+```
+
+#### DISABLE SPECIFIC RELEASE (of a deployment name)
+
+```
+appcenter codepush patch -a <owner-name>/<app-name> <deploymentName> <existingReleaseLabel> --disabled
+```
+
+`patch` is actually a very powerful utility that let you modify a release. [Make sure to checkout the docs](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/cli#patching-update-metadata) to discover what you can do with it!
+
+_NOTE: the difference between disabling and rolling back is that the first one just disable a release so the app will get the previous one while the rollback create a new release equal to the second-last release in order to nullify the latest_
 
 If you need any kind of support, reach out to me on twitter, I'd be glad to help.
