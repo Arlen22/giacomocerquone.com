@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giacomo Cerquone]]></title><description><![CDATA[Giacomo Cerquone, developer]]></description><link>https://giacomocerquone.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Nov 2019 19:12:18 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[I love computer science and making beatiful programs.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giacomo Cerquone]]></title><description><![CDATA[Giacomo Cerquone, developer]]></description><link>https://giacomocerquone.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 Nov 2019 02:38:39 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[I love computer science and making beatiful programs.
 I have a computer science bachelor degree and 4 years of work experience as a remote…]]></description><link>https://giacomocerquone.com/bio/</link><guid isPermaLink="false">https://giacomocerquone.com/bio/</guid><content:encoded>&lt;p&gt;I love computer science and making beatiful programs.
 I have a computer science bachelor degree and 4 years of work experience as a remote freelancer mainly as a &lt;strong&gt;React Native/React&lt;/strong&gt; developer.
 Cinephile, astronomy lover, coffe and tea enthusiast and passionate about new technologies.
@@ -61,12 +61,34 @@ So how are OTA delivered? Simple, replacing that bundle, when certain conditions
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;Linking and JS implementation&lt;/h2&gt;
-&lt;p&gt;The entire library is going under heavy maintenance and for this reason something may be a bit outdated and something else might be missing: &lt;strong&gt;no hooks support&lt;/strong&gt;, &lt;strong&gt;no autolinking support&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Since this library doesn’t support autolinking, when installed you must launch &lt;strong&gt;react-native link react-native-code-push&lt;/strong&gt; and it will ask you for one of the key retrieved at the previous step.
+&lt;p&gt;The entire library is going under heavy maintenance and for this reason something may be a bit outdated and something else might be missing: &lt;strong&gt;no hooks support&lt;/strong&gt;, &lt;strong&gt;no autolinking support&lt;/strong&gt;.
+It exposes a HOC or some “low level” functions we can use to configure how the updates should be retrieved by the app (&lt;a href=&quot;https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md&quot;&gt;here the doc&lt;/a&gt;).
+Since this library doesn’t support autolinking, when installed you must launch &lt;strong&gt;react-native link react-native-code-push&lt;/strong&gt; and it will ask you for one of the key retrieved at the previous step.
 My advice here is:&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;Write it in the terminal while linking if you know you’ll just use one deployment key for your app (the key relative to the &lt;em&gt;Production&lt;/em&gt; deployment name for example).&lt;/li&gt;
 &lt;li&gt;Leave it empty if you plan to use various deployments (&lt;em&gt;Production&lt;/em&gt;, &lt;em&gt;Staging&lt;/em&gt; ecc.) in order to effectively handle the keys from the js side.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first one, clearly, has a simpler js configuration, you just need to wrap your app entry point with the CodePush HOC. Something like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MyApp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;codePush&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MyApp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The second one instead requires us to specify the Code Push Key inside the codePush HOC:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MyApp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;codePush&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  deploymentKey&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;YOURKEY&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; CodePushOptions&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MyApp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can check the CodePushOptions signature &lt;a href=&quot;https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md#codepushoptions&quot;&gt;here&lt;/a&gt;. It allows us to set all kinds of behaviours when an update is available to be downloaded. Alerts, percentage’s progress, completely silent, apply at restart etc. etc.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;NOTE: Pay attention to when you’d like to hide your splashscreen or stop your loader since you might also want to completely hide the whole process to the user. You can do it through the second parameter of the CodePush key which is an update callback to retrieve the process status&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I want also to be very clear about the second way I proposed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It isn’t the only way to use multiple keys (the easier for me)&lt;/li&gt;
+&lt;li&gt;It is very dangerous to use it without having a &lt;em&gt;safe and good env vars handling in react-native&lt;/em&gt; (this will be my next post’s topic) which is almost impossible considering the tools and libs we have at the moment.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Important CLI commands&lt;/h2&gt;
 &lt;p&gt;Let’s see an handy collection of the main useful commands you can refer to &lt;br/&gt;&lt;/p&gt;
