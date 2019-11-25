@@ -46,12 +46,43 @@ _NOTE: in the docs this is taken for granted and nowhere seems to be mentioned, 
 ## Linking and JS implementation
 
 The entire library is going under heavy maintenance and for this reason something may be a bit outdated and something else might be missing: **no hooks support**, **no autolinking support**.
-
+It exposes a HOC or some "low level" functions we can use to configure how the updates should be retrieved by the app ([here the doc](https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md)).
 Since this library doesn't support autolinking, when installed you must launch **react-native link react-native-code-push** and it will ask you for one of the key retrieved at the previous step.
 My advice here is:
 
-- Write it in the terminal while linking if you know you'll just use one deployment key for your app (the key relative to the _Production_ deployment name for example).
-- Leave it empty if you plan to use various deployments (_Production_, _Staging_ ecc.) in order to effectively handle the keys from the js side.
+1. Write it in the terminal while linking if you know you'll just use one deployment key for your app (the key relative to the _Production_ deployment name for example).
+2. Leave it empty if you plan to use various deployments (_Production_, _Staging_ ecc.) in order to effectively handle the keys from the js side.
+
+The first one, clearly, has a simpler js configuration, you just need to wrap your app entry point with the CodePush HOC. Something like:
+
+```JSX
+function MyApp() {
+  return null
+}
+
+export default codePush(MyApp);
+```
+
+The second one instead requires us to specify the Code Push Key inside the codePush HOC:
+
+```JSX
+function MyApp() {
+  return null
+}
+
+export default codePush({
+  deploymentKey: 'YOURKEY'
+}: CodePushOptions)(MyApp);
+```
+
+You can check the CodePushOptions signature [here](https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md#codepushoptions). It allows us to set all kinds of behaviours when an update is available to be downloaded. Alerts, percentage's progress, completely silent, apply at restart etc. etc.
+
+_NOTE: Pay attention to when you'd like to hide your splashscreen or stop your loader since you might also want to completely hide the whole process to the user. You can do it through the second parameter of the CodePush key which is an update callback to retrieve the process status_
+
+I want also to be very clear about the second way I proposed:
+
+- It isn't the only way to use multiple keys (the easier for me)
+- It is very dangerous to use it without having a _safe and good env vars handling in react-native_ (this will be my next post's topic) which is almost impossible considering the tools and libs we have at the moment.
 
 ## Important CLI commands
 
