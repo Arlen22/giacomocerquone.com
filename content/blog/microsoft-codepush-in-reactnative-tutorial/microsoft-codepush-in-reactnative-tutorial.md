@@ -23,7 +23,7 @@ I won't talk about other platforms, but OTA updates aren't possible on every fra
 In React Native we are "required" to build a **JavaScript bundle** to produce a production app. That js bundle, called index.android.bundle in Android and main.jsbundle in iOS, is bundled within the aab/apk/ipa and then the Java/Obj-C code of our React Native app will use it.
 So how are OTA delivered? Simple, replacing that bundle, when certain conditions are met, through a native linked library that restarts the execution of that bundle at runtime.
 
-Now **understanding how something works** is the only way you can **improve yourself** and become as independent as possible. I might also have tempted a personal implementation of this mechanism, but it'd be silly since we have **Microsoft CodePush**: a tool, inside the app center, made exactly to deliver OTA updates.
+Now **understanding how something works** is the only way you can **improve yourself** and become as independent as possible. I might also have attempted to develop a personal implementation of this mechanism, but it'd be silly since we have **Microsoft CodePush**: a tool, inside the app center, made exactly to deliver OTA updates.
 
 ## Configuration
 
