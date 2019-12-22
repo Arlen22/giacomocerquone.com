@@ -51,13 +51,15 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
           textAlign: "center",
         }}
       >
-        <Image
-          fluid={post.frontmatter.image.childImageSharp.fluid}
-          alt={post.frontmatter.imageAlt}
-          style={{
-            maxHeight: "21rem",
-          }}
-        />
+        {post.frontmatter.image && (
+          <Image
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+            alt={post.frontmatter.imageAlt}
+            style={{
+              maxHeight: "21rem",
+            }}
+          />
+        )}
         <p style={{ marginTop: "1rem" }}>
           Photo by{" "}
           {post.frontmatter.imgAuthor === "me" ? (
