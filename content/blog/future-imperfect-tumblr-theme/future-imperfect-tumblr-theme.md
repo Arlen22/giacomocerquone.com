@@ -4,6 +4,7 @@ date: 2017-04-23 02:04:16
 description: How should you develop a tumblr theme today? Look at this one developed by me and crafted by html5up and you'll see
 image: "./tumblrtheme.jpg"
 slug: blog/future-imperfect-tumblr-theme
+imgAuthor: helloquence
 ---
 
 Here we are again in another occasion talking about Tumblr. Being a faithful user of this blogging platform I already wrote something about it in a previous post: if you recall I was showing how is possible to backup all the written posts in one, safe txt file to keep wherever you want and now I come back to you to bring you this little new theme developed from an original design of [html5up](http://html5up.net).

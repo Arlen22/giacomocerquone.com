@@ -4,6 +4,7 @@ date: 2019-08-11 20:59:47
 description: An handy thin fetch wrapper in less of 100 lines featuring abortion (with polyfill for non supporting envs), token setter etc.
 image: "./wrapped-chocolate.jpg"
 slug: blog/fetch-wrapper
+imgAuthor: twinsfisch
 ---
 
 Hi there, hope you're enjoying the new website and blog.

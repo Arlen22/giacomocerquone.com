@@ -4,6 +4,7 @@ date: 2017-01-02 00:22:34
 description: I've read the second edition of this famous book, here is my two cents
 image: "./eloquentJs.jpg"
 slug: blog/eloquent-javascript
+imgAuthor: joshapplegate
 ---
 
 Happy new year my boys! Here we are in 2017, I hope it'll be great for all of us and that it will bring a fresh ton of new things. With this post I hope to start a long series of review of books that I want to read about programming.
