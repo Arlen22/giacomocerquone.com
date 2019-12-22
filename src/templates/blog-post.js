@@ -60,13 +60,17 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
         />
         <p style={{ marginTop: "1rem" }}>
           Photo by{" "}
-          <a
-            href={`https://unsplash.com/@${post.frontmatter.imgAuthor}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {post.frontmatter.imgAuthor}
-          </a>
+          {post.frontmatter.imgAuthor === "me" ? (
+            "me"
+          ) : (
+            <a
+              href={`https://unsplash.com/@${post.frontmatter.imgAuthor}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {post.frontmatter.imgAuthor}
+            </a>
+          )}
         </p>
       </div>
 
