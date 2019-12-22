@@ -5,6 +5,7 @@ date: 2016-01-03 18:19:21
 image: "./jekyll-vs-hexo.jpg"
 imageAlt: "jekyll and hexo logo"
 slug: blog/jekyll-vs-hexo
+imgAuthor: me
 ---
 
 Don't you think this blog has speeded up a little bit from the last time you visited it?

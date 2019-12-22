@@ -5,6 +5,7 @@ date: 2015-11-16 12:41:47
 image: "./CSSLoading.jpg"
 imageAlt: "captured css loading animation"
 slug: blog/loading-animation-with-pure-css
+imgAuthor: me
 ---
 
 This post contains just a little and simple example of an animation made with CSS only and no javascript or any other complicated libraries. This thing actually comes directly from the project I'm about to present here in a few days. Anyway if you want to jump right to the animation [here the snippet](http://jsfiddle.net/fk8ke82t/) on jsfiddle.

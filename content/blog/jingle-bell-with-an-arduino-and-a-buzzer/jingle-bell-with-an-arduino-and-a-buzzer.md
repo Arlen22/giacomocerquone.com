@@ -5,6 +5,7 @@ date: 2015-12-06 22:07:36
 image: "./arduino-jingle-bell-completed.jpg"
 imageAlt: "arduino with buzzer near to a tree"
 slug: blog/jingle-bell-with-an-arduino-and-a-buzzer
+imgAuthor: me
 ---
 
 So Christmas is coming and everyone are about to put wonderful coloured trees in their houses. This year we bought a new tree because the old one was really too old, it had more than 20 years and I'm just 19... so when my mum and dad bought it, I wasn't even born! But we didn't change the rest, so we have always the same old decorations and between balls, and lights there is this little Santa Claus shaped box that has a buzzer inside that **should** play some christmas songs, but guess what? It can barely play a distorted whistle. So for other reasons I had an arduino UNO at hands and I asked my mum if she wanted a new thing to play some Christmas songs, she said yes and here we are!
