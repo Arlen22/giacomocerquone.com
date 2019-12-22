@@ -4,6 +4,7 @@ description: Sharing this little story of how I created a Telegram bot for our u
 date: 2016-03-10 11:38:09
 image: "./univaq-telegram-bot.jpg"
 slug: blog/how-we-built-our-university-s-bot
+imgAuthor: me
 ---
 
 Hello my dear followers (is there someone following me? really? don't believe you!), hell if I've not been busy in these days. Actually I'm studying for the university, studying new technologies online (trying the fresh new Angular 2 and improving my confidence in general with the MEAN stack) and reading a lot of very good literature books advised from my trusted bookseller. Despite all this, I've been able to create something very funny with a friend of mine!

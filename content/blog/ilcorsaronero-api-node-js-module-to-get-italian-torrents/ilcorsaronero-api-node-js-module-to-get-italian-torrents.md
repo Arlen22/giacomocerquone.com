@@ -5,9 +5,10 @@ date: 2015-12-20 02:14:12
 image: "./ilcorsaronero-api.jpg"
 imageAlt: panda with laptop
 slug: blog/ilcorsaronero-api-node-js-module-to-get-italian-torrents
+imgAuthor: me
 ---
 
-Hello guys, today we're going to talk of another minor minor (minor) project that is coming to life thanks to another big project of mine that I should have already released but due to my slowness I still not be ready to show it (yes, I'm talking of the same project I was talking in this [other post](http://blog.giacomocerquone.com/loading-animation-with-pure-css/)). Anyway let's talk about what this module I developed does and how.
+Hello guys, today we're going to talk of another minor minor (minor) project that is coming to life thanks to another big project of mine that I should have already released but due to my slowness I'm still not ready to show it (yes, I'm talking of the same project I was talking in this [other post](http://blog.giacomocerquone.com/loading-animation-with-pure-css/)). Anyway let's talk about what this module I developed does and how.
 
 ## What was I trying to accomplish?
 

@@ -4,6 +4,7 @@ date: 2016-05-15 13:13:25
 description: While I was enjoying some free time, I cheated on a website that counts the words per minute that you can write.
 image: "./10fastfingers-cheat.jpg"
 slug: blog/how-i-cheated-10fastfingers-com
+imgAuthor: me
 ---
 
 Occasionally, I enjoy writing on the keyboard of my precious laptop as fast as hell and due to this “hobby”, if we can call it like that, some years ago I discovered this wonderful website of competition for freaks like me: [10fastfingers.com](http://www.10fastfingers.com)! It basically calculates how many words read from a board you can write in one minute. I have an average of 105 wpm with peaks that reach 112 wpm. I’ve never tried to cheat the system, I don’t give a damn about my scores, if I do things like these, it’s because I enjoy thinking and coding a way to achieve what I want.

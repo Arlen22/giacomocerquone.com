@@ -4,6 +4,7 @@ description: I developed this little library to let developers create their own 
 date: 2015-09-20 23:09:06
 image: "./popcorntime_remote_api.jpg"
 slug: blog/how-the-popcorn-times-api-works-popcorntime-remote-js
+imgAuthor: me
 ---
 
 > _The only people who don't love Popcorn Time are the people who still don't know it... and the cops of course!_
