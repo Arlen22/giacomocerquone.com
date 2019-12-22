@@ -5,6 +5,7 @@ description: Microsoft CodePush is a powerful tool but can be very exhausting to
 image: ./fast-city.jpg
 imageAlt: fast night city lights
 slug: blog/microsoft-codepush-integration-in-react-native-0.60
+imgAuthor: "marcojodoin"
 ---
 
 The world has been spinning pretty fast lately, hasn't it?
@@ -41,16 +42,16 @@ There shouldn't be the need of explaining how the app should be set up on the Ap
 
 1. Signup
 2. Go to your [apps' dashboard](https://appcenter.ms/apps).
-3. You'll need to add two apps.  Basically, you can't configure a single app (and therefore use a single key) to release updates to both your Android and iOS apps. **You must configure two apps targeting two different OS**. This is confusing also because an old version of the cli allowed to specify multiple OS of a single app when releasing the updates.*
-Configure them like this, once selecting iOS and once Android in the OS field (leave the Release Type empty, this has nothing to do with CodePush):
-![Add app in App Center](./step.png)
+3. You'll need to add two apps. Basically, you can't configure a single app (and therefore use a single key) to release updates to both your Android and iOS apps. **You must configure two apps targeting two different OS**. This is confusing also because an old version of the cli allowed to specify multiple OS of a single app when releasing the updates.\*
+   Configure them like this, once selecting iOS and once Android in the OS field (leave the Release Type empty, this has nothing to do with CodePush):
+   ![Add app in App Center](./step.png)
 4. Open your app and on the left panel select "Distribute -> CodePush -> Create standard deployments"
 5. You'll have a dropdown selection and a wrench icon in the upper-right corner!
-The **dropdown** indicates the current deployment name you're viewing, the **wrench icon** lets you open a side-panel which gives you **the keys** your app will use to retrieve the bundles (store this somewhere momentarily in order to use them in the next steps).
+   The **dropdown** indicates the current deployment name you're viewing, the **wrench icon** lets you open a side-panel which gives you **the keys** your app will use to retrieve the bundles (store this somewhere momentarily in order to use them in the next steps).
 
 That's it.
 
-_*NOTE: in the docs this is taken for granted and nowhere seems to be mentioned, the only warning you can find is this and it doesn't tell us much_
+_\*NOTE: in the docs this is taken for granted and nowhere seems to be mentioned, the only warning you can find is this and it doesn't tell us much_
 
 ![App Center Warning](./appcenter-warning.jpg)
 
