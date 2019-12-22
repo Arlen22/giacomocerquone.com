@@ -4,6 +4,7 @@ description: Movies Lookup is a little Node application to lookup ratings of man
 date: 2015-12-01 09:54:23
 image: "./Movies-lookup.jpg"
 slug: blog/movies-lookup-how-to-delete-600-movies-istantly
+imgAuthor: me
 ---
 
 Only the ones who are affected from the collector's bug know what really means to have thousands and thousands of movies in Hard Drives without the possibility to watch them. I was really annoyed of this situation: in fact I'm well known to be extremely minimalist and a damn control freak... my rommate knows this very very well, in my family's house I used to throw out the impossible and everytime I put things in order I come out with plenty of full bags of garbage, it's a lifestyle.

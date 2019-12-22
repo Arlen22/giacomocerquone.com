@@ -4,6 +4,7 @@ date: 2017-04-26 22:11:54
 description: Description of a Pull Request made for the node-tvdb npm package. Let's see what changes I proposed!
 image: "./node-tvdb-pull-request.jpg"
 slug: blog/contributing-to-node-tvdb
+imgAuthor: me
 ---
 
 I don't know exactly how the idea of commenting pull requests here on the blog came to my mind. Maybe I've been influenced by an [italian post](https://www.raffaelegaito.com/content-marketing-startup/) on Raffaele Gaito's blog (written by Alberto Cabas Vidani whom I thank) that quoted [Gary Vee's speech](https://www.youtube.com/watch?v=RVKofRN1dyI): "Document, don't create".
