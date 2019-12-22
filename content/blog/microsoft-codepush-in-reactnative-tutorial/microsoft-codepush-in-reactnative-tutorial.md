@@ -8,6 +8,7 @@ slug: blog/microsoft-codepush-integration-in-react-native-0.60
 imgAuthor: "marcojodoin"
 ---
 
+
 The world has been spinning pretty fast lately, hasn't it?
 In the development process what we're used to call "**continuous delivery**" is what allowed us, as end-users, to perceive changes in a blazingly fast way and it's what allows us, as developers, to **push fixes** and new features faster to the end-user.
 
@@ -16,7 +17,7 @@ You'll find **so many** articles about it and maybe you still are figuring out w
 But how can we effectively do this in the world of mobile development? Through **over-the-air** updates.
 It's the ability of an app to receive bugfixes and features that can be **applied at runtime** and refresh the user experience. This means no store approval, no build time and lots of other simplifications.
 
-_NOTE: I'll keep updated this guide at the best of my possibilities for every react-native-code-push update. If you feel something is missing, ping me on [Twitter](https://twitter.com/giacomocerquone) or send me an email_
+_NOTE: **I'll keep this guide updated** at the best of my possibilities for every react-native-code-push update. If you feel something is missing, ping me on [Twitter](https://twitter.com/giacomocerquone) or send me an email_
 
 ## General inner working
 
@@ -34,7 +35,7 @@ Online resources are a bit scarce on how to:
 - Properly configure this library
 - Use the appcenter cli
 
-There is a [huge unhandy Microsoft documentation](https://docs.microsoft.com/en-us/appcenter/) about it, but at the same time, it's possible to find many commands out in the wild of the old version of the cli that don't work anymore.
+There is a [huge unhandy Microsoft documentation](https://docs.microsoft.com/en-us/appcenter/) about it, but at the same time, it's possible to find many commands out in the wild of the **old version** of the cli that don't work anymore.
 
 ## Configure the app in the App Center dashboard
 
@@ -62,10 +63,10 @@ It exposes a HOC or some "low level" functions we can use to configure how the u
 Since this library doesn't support auto-linking, when installed you must launch **react-native link react-native-code-push** and it will ask you for **only one** of the key retrieved at the previous step.
 My advice here is:
 
-1. Write it in the terminal while linking if you know you'll just use one deployment key for your app (the key relative to the _Production_ deployment name for example).
-2. Leave it empty if you plan to use various deployments (_Production_, _Staging_ ecc.) to effectively handle the keys from the js side.
+1. **Write it in the terminal** while linking if you know you'll just use one deployment key for your app (the key relative to the _Production_ deployment name for example).
+2. Leave it empty if you plan to use various deployments (_Production_, _Staging_ ecc.) to effectively **handle the keys from the js side**.
 
-The first one has a simpler js configuration, you just need to wrap your app entry point with the CodePush HOC. Something like:
+The first one has a **simpler js configuration**, you just need to wrap your app entry point with the CodePush HOC. Something like:
 
 ```JSX
 function MyApp() {
@@ -75,7 +76,7 @@ function MyApp() {
 export default codePush(MyApp);
 ```
 
-The second one instead requires us to specify the Code Push-Key inside the code push HOC:
+The second one instead requires us to specify the Code Push-Key inside the codePush HOC:
 
 ```JSX
 function MyApp() {
@@ -87,18 +88,18 @@ export default codePush({
 }: CodePushOptions)(MyApp);
 ```
 
-You can check the CodePushOptions signature [here](https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md#codepushoptions). It allows us to set all kinds of behaviors when an update is available to be downloaded. Alerts, percentage progress, completely silent, apply at restart, etc. etc.
+You can check the **CodePushOptions type** [here](https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md#codepushoptions). It allows us to set all kinds of behaviors when an update is available to be downloaded. Alerts, percentage progress, completely silent, apply at restart, etc. etc.
 
 _NOTE: Pay attention to when you'd like to hide your splash screen or stop your loader since you might also want to completely hide the whole process to the user. You can do it through the second parameter of the CodePush key which is an update callback to retrieve the process status_
 
 I want also to be very clear about the second way I proposed:
 
-- It isn't the only way to use multiple keys (the easier for me)
-- It is very dangerous to use it without having a _safe and good env vars handling in react-native_ (this will be my next post's topic) which is almost impossible considering the tools and libs we have at the moment.
+- **It isn't the only way** to use multiple keys (the easier for me)
+- It is **very dangerous** to use it without a _safe and good env vars handling in react-native_ (**this will be my next post's topic**) which is almost impossible considering the tools and libs we have at the moment.
 
 ## Important CLI commands
 
-Let's see a handy collection of the main useful commands you can refer to <br/>
+Let's see a handy **collection** of the main useful commands you can refer to <br/>
 
 _NOTE: Microsoft calls it deployment name (or simply deployment), it is also often referred to as lanes, product flavors, build schemes or also specific deploy and they indicate some sort of specific configuration of your app: stage, dev, production, production-IT ecc._
 
@@ -148,4 +149,4 @@ appcenter codepush patch -a <owner-name>/<app-name> <deploymentName> <existingRe
 
 _NOTE: the difference between disabling and rolling back is that the first one just disable a release so the app will get the previous one while the rollback create a new release equal to the second-last release to nullify the latest_
 
-If you need any kind of support, reach out to me on Twitter, I'd be glad to help.
+If you need any kind of support, **reach out to me on Twitter**, I'd be glad to help.
