@@ -4,6 +4,7 @@ description: In this article I will list the technologies, paradigms and languag
 date: 2018-03-03 18:31:19
 image: "./learning.jpg"
 slug: blog/technologies-to-learn-2018
+imgAuthor: kellysikkema
 ---
 
 What have you been up to these two months of this new year? I hope you're all enjoying working on your projects and that your technologies stack is always up to date in order to experience the most from your languages and frameworks.
