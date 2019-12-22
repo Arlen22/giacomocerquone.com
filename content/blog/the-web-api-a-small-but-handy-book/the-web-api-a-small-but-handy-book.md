@@ -4,6 +4,7 @@ date: 2017-09-12 19:38:45
 description: This is a little book that the writer published on a facebook page where I answered him. Let's check it out
 image: "./thewebapi.jpg"
 slug: blog/the-web-api-a-small-but-handy-book
+imgAuthor: joshapplegate
 ---
 
 Hello my boys, here we go with another little book review.

@@ -60,7 +60,13 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
         />
         <p style={{ marginTop: "1rem" }}>
           Photo by{" "}
-          <a href={post.frontmatter.authorUrl}>{post.frontmatter.authorName}</a>
+          <a
+            href={`https://unsplash.com/@${post.frontmatter.imgAuthor}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {post.frontmatter.imgAuthor}
+          </a>
         </p>
       </div>
 
@@ -138,8 +144,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
-        authorName
-        authorUrl
+        imgAuthor
         imageAlt
         image {
           childImageSharp {
