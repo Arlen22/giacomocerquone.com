@@ -5,6 +5,7 @@ description: What are the main problems with Expo at this time? And what can be 
 image: "./why-i-dropped-expo.jpg"
 imageAlt: gears bare metal
 slug: blog/why-i-dropped-expo-and-embraced-react-native
+imgAuthor: bill_oxford
 ---
 
 As some of you may know, I'm currently working as a freelancer in React Native and constantly shipping and curating some apps. I may not have created 100+ apps like this guy on [dev.to](https://dev.to/kylessg/ive-released-over-100-apps-in-react-native-since-2015-ask-me-anything-1m9g), but I made quite a few of them and all were data centric with lots of screens and user inputs handling (we don't like simple challenges right?).
@@ -50,7 +51,6 @@ Not that I'm leaving expo because I have encountered technical problems with it,
 - I could mention many many more problems that I encountered (or I'm still encountering) in certain version of the sdk and be clear that some of them (like the one that is still in almost 2020 [affecting the keyboard behaviour](https://github.com/expo/expo/issues/2172) in all of the screens of your app) aren't related to certain native modules provided by expo, but they're there just because you use expo.
 - Apps weight [really too much](https://expo.canny.io/feature-requests/p/reducing-app-size).
 - Requesting permissions you'll never use, IDFA and other bad stuff [almost no one talk about](https://github.com/expo/expo/issues/1138).
-
 
 ## Ejecting? No thanks. Better building from the ground up
 
