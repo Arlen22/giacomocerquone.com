@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giacomo Cerquone]]></title><description><![CDATA[Giacomo Cerquone, developer]]></description><link>https://giacomocerquone.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Dec 2019 19:46:41 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[I love computer science and making beatiful programs.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Giacomo Cerquone]]></title><description><![CDATA[Giacomo Cerquone, developer]]></description><link>https://giacomocerquone.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Dec 2019 14:33:23 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[I love computer science and making beatiful programs.
 I have a computer science bachelor degree and 4 years of work experience as a remote…]]></description><link>https://giacomocerquone.com/bio/</link><guid isPermaLink="false">https://giacomocerquone.com/bio/</guid><content:encoded>&lt;p&gt;I love computer science and making beatiful programs.
 I have a computer science bachelor degree and 4 years of work experience as a remote freelancer mainly as a &lt;strong&gt;React Native/React&lt;/strong&gt; developer.
 Cinephile, astronomy lover, coffe and tea enthusiast and passionate about new technologies.
@@ -8,7 +8,79 @@ Mozilla.org: Apply
 ItalianCoders.it: Angular Routing, Facebook…]]></description><link>https://giacomocerquone.com/pubs/</link><guid isPermaLink="false">https://giacomocerquone.com/pubs/</guid><content:encoded>&lt;p&gt;A list of my publications on free online resources.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://it.wikipedia.org/wiki/Utente:Giacomocerquone&quot;&gt;Wikipedia&lt;/a&gt;: &lt;a href=&quot;https://it.wikipedia.org/wiki/ECMAScript&quot;&gt;ECMAScript&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://developer.mozilla.org/it/profiles/giacomocerquone&quot;&gt;Mozilla.org&lt;/a&gt;: &lt;a href=&quot;https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Function/apply&quot;&gt;Apply&lt;/a&gt; &lt;br/&gt;
-&lt;a href=&quot;https://italiancoders.it/author/giacomo-cerquone/&quot;&gt;ItalianCoders.it&lt;/a&gt;: &lt;a href=&quot;https://italiancoders.it/routing-delle-applicazioni-angular/&quot;&gt;Angular Routing&lt;/a&gt;, &lt;a href=&quot;https://italiancoders.it/creare-un-bot-per-messenger-in-nodejs/&quot;&gt;Facebook bot&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Re-thinking env vars in React Native]]></title><link>https://giacomocerquone.com/blog/rethinking-env-vars-in-react-native</link><guid isPermaLink="false">https://giacomocerquone.com/blog/rethinking-env-vars-in-react-native</guid><pubDate>Mon, 02 Dec 2019 09:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[Microsoft CodePush Integration in React Native 0.60+]]></title><description><![CDATA[The world has been spinning pretty fast lately, hasn’t it?
+&lt;a href=&quot;https://italiancoders.it/author/giacomo-cerquone/&quot;&gt;ItalianCoders.it&lt;/a&gt;: &lt;a href=&quot;https://italiancoders.it/routing-delle-applicazioni-angular/&quot;&gt;Angular Routing&lt;/a&gt;, &lt;a href=&quot;https://italiancoders.it/creare-un-bot-per-messenger-in-nodejs/&quot;&gt;Facebook bot&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Re-thinking env vars in React Native]]></title><description><![CDATA[We can say it: some parts of React Native are still missing and sometimes this may keep us on alert when developing an app made for the…]]></description><link>https://giacomocerquone.com/blog/rethinking-env-vars-in-react-native</link><guid isPermaLink="false">https://giacomocerquone.com/blog/rethinking-env-vars-in-react-native</guid><pubDate>Mon, 02 Dec 2019 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We can say it: some parts of React Native are still missing and sometimes this may keep us on alert when developing an app made for the public.
+One of the main pieces I think it’s missing, is the use of &lt;strong&gt;environment variables&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;For sure there are many packages that tries to help, yet I didn’t find one that was correctly working with my requirements.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;Let’s go for steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I need many builds of my app and each of them must be configured accordingly.&lt;/li&gt;
+&lt;li&gt;The same way of applying the configuration is needed while developing.&lt;/li&gt;
+&lt;li&gt;It’s obvious that since the need of a build time configuration, the configuration must come from outside the javascript code.&lt;/li&gt;
+&lt;li&gt;The configuration can also be guided by a single value.
+For example I could inject a ‘stage’ string, and let the javascript code picks up a particular configuration object with the correct values.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;NOTE: As you may have read from this other post, I’m recently excluding Expo from my complex apps I’m working on.
+On Expo we have what it’s called “ota channels”. When we request a particular build, you are asked for a string that represents the channel of the app will listen to when retrieving the OTA updates. With that I could accomplished what I’m asking.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;My solution&lt;/h2&gt;
+&lt;h2&gt;Alternatives&lt;/h2&gt;
+&lt;p&gt;What are the available packages that didn’t work out for me?&lt;/p&gt;
+&lt;p&gt;The problems with a common dotenv package in react-native are mainly two:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;They set env vars on the machine you’re running the code and very often, through the “boxed” frameworks I mentioned, it’s hard to access them.&lt;/li&gt;
+&lt;li&gt;Once you find a way, it seems that’s almost impossible to set them at build time in a clean way. Sometimes you can decide between a dev and prod env, but very often these are meaningless and depend on the &lt;code class=&quot;language-text&quot;&gt;__DEV__&lt;/code&gt; you’re developing on and still you can’t set them the way you want when you want (look at &lt;a href=&quot;https://github.com/zetachang/react-native-dotenv&quot;&gt;react-native-dotenv&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If they don’t have these problems, they’re hard to configure and built as a dependency and not as a devDependency.&lt;br/&gt;
+Meaning that stuff like &lt;a href=&quot;https://github.com/luggit/react-native-config&quot;&gt;react-native-config&lt;/a&gt; are native packages that must be linked and their code runs at runtime too.&lt;/p&gt;
+&lt;h3&gt; Alternatives&lt;/h3&gt;
+&lt;h3&gt;React-native-dotenv&lt;/h3&gt;
+&lt;p&gt;This package goes very close to accomplish what I want for my build workflow but sadly they reached a dead end for various reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No possibility to choose a certain env file.
+&lt;a href=&quot;https://github.com/zetachang/react-native-dotenv/pull/34&quot;&gt;Someone tried to implement&lt;/a&gt; the possibility to select a specific env file through an env var (a sort of parent env var to orchestrate everything) but hit a wall when working with gradle and xcode&lt;/li&gt;
+&lt;li&gt;The package is not maintained anymore and there is some low level problem to the whole architecture that forces you to edit the files that import the env vars when you change them in order to let them retrieve the new values. (I assume because of babel)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;react-native-jsenv&lt;/h1&gt;
+&lt;p&gt;A cli tool to inject values and env vars into code at build time or at runtime with zero dependency.&lt;/p&gt;
+&lt;h2&gt;Naming&lt;/h2&gt;
+&lt;p&gt;I decided to call this package with a prefixed “react-native” because as far as my experience goes it’s where it’s needed.
+Plus, like you’ll see, if it wasn’t for the possibility to inject env vars, it was merely a script to copy and paste one file, but still is a structured solution that almost no one uses and that I think must be discussed and used.&lt;/p&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;jsenv --input ./envsFiles/env.example.js --output ./src/constants/constants.js API_URL https://cat.it API_V=$API_V&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;take env.example.js and copy its content to constants.js&lt;/li&gt;
+&lt;li&gt;set the API_URL variable of constants.js to &lt;a href=&quot;https://cat.it&quot;&gt;https://cat.it&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;set API_V variable of constants.js to the current env var value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can also set nested properties with the limitation of &lt;strong&gt;not being able to use dots&lt;/strong&gt; in your properties names’.&lt;/p&gt;
+&lt;p&gt;Ultimately you can get everything from the env vars in this way &lt;strong&gt;without being limited from the dot notation&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;jsenv --inputFromEnv --output ./src/constants.js&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;So I get OTA channels for free? You bet&lt;/h3&gt;
+&lt;p&gt;Another problem we solve in a such easy way is the creation and definition of &lt;a href=&quot;https://docs.expo.io/versions/latest/distribution/release-channels/&quot;&gt;release channels&lt;/a&gt; (from expo terminology) with your favourite OTA updates system.&lt;br /&gt;
+With &lt;a href=&quot;https://github.com/microsoft/react-native-code-push&quot;&gt;Microsoft CodePush&lt;/a&gt;, for example, you can import the CODE PUSH key from the env.js file edited with this package at build time and direct the updates wherever you want.&lt;/p&gt;
+&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;This package aims to solve a common front-end issue in the React Native ecosystem in a different way.&lt;br /&gt;&lt;br/&gt;
+It comes from problems and difficulties I experienced while building and working on pretty complex React Native apps.&lt;br /&gt;
+In fact this package ease down the complexities of defining env vars (or configuration variables I should say) in these “boxed” platforms/frameworks (like create-react-app, angular/cli, react-native etc. with complex webpack conf and thousands of plugin).&lt;br/&gt;&lt;br/&gt;
+So why use env vars when we already have the possibility to export something directly through the same language we’re writing the code? Of course is a provocative question, but not stupid. Many tools do this (metro.config, .babelrc etc.) but we’re not used to do it in our application’s code.&lt;br/&gt;
+The &lt;a href=&quot;https://12factor.net/config&quot;&gt;12 factor app&lt;/a&gt; bless this in a certain sense:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Another approach to config is the use of config files which are not checked into revision control, such as config/database.yml in Rails.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Of course then it tries to explain basically that it’s prone to human errors (like everything I’d say) and then there are these assumptions:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Env vars are easy to change between deploys without changing any code.
+Unlike config files, there is little chance of them being checked into the code repo accidentally.
+They are a language and OS-agnostic standard.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;The first sentence is true, but only if the code runs in a machine we control.&lt;/li&gt;
+&lt;li&gt;The second is pretty much false. We’re used to have dotenv files, so there is the same risk of committing that instead of a config file, plus in frontend apps, like React Native too, env vars &lt;strong&gt;are not&lt;/strong&gt; hidden to the end user and for this reason it’s strongly advised to not store any sensitive information. So, again, it’s just configuration.&lt;/li&gt;
+&lt;li&gt;The third sentence implies that should be easy to read them. It should indeed, but in the current situation it’s absolutely the opposite, it’s hard as fuck.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In fact environment variables were started to be used in the developing world when you needed to configure an environment, indeeed, where your code would have run.&lt;/p&gt;
+&lt;p&gt;As a front-end developer, I know that what we’re trying to accomplish isn’t the configuration of an environment, but the configuration of a specific build in a specific way and in such cases what we miss is a value, even a single string, that we can inject into a build from where you can deduct every other internal config value.&lt;br/&gt;
+All those tools I quoted, except expo, doesn’t allow this as far as I know.
+Create-React-App for example let you directly access the env vars in the system &lt;strong&gt;OR&lt;/strong&gt; use a pre-defined file. It is something but I’d prefer a mix of the two, use an env var (or a CLI argv) that specify the file where to get the configuration from.&lt;/p&gt;
+&lt;p&gt;But in React-native instead we have an even harder deficiency of not having any possibility to set an env var in a usual manner into the terminal and get&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Microsoft CodePush Integration in React Native 0.60+]]></title><description><![CDATA[The world has been spinning pretty fast lately, hasn’t it?
 In the development process what we’re used to call ”continuous delivery” is what…]]></description><link>https://giacomocerquone.com/blog/microsoft-codepush-integration-in-react-native-0.60</link><guid isPermaLink="false">https://giacomocerquone.com/blog/microsoft-codepush-integration-in-react-native-0.60</guid><pubDate>Mon, 25 Nov 2019 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The world has been spinning pretty fast lately, hasn’t it?
 In the development process what we’re used to call ”&lt;strong&gt;continuous delivery&lt;/strong&gt;” is what allowed us, as end-users, to perceive changes in a blazingly fast way and it’s what allows us, as developers, to &lt;strong&gt;push fixes&lt;/strong&gt; and new features faster to the end-user.&lt;/p&gt;
 &lt;p&gt;You’ll find &lt;strong&gt;so many&lt;/strong&gt; articles about it and maybe you still are figuring out what it really is but remember, these apparently abstract and hard to follow concepts that pops up here and there nowadays always boil down somehow to something practical: a tool, a service or an architecture that let you do something.&lt;/p&gt;
@@ -19,7 +91,7 @@ It’s the ability of an app to receive bugfixes and features that can be &lt;st
 &lt;p&gt;I won’t talk about other platforms, but OTA updates aren’t possible on every framework due to their different inner workings.
 In React Native we are “required” to build a &lt;strong&gt;JavaScript bundle&lt;/strong&gt; to produce a production app. That js bundle, called index.android.bundle in Android and main.jsbundle in iOS, is bundled within the aab/apk/ipa and then the Java/Obj-C code of our React Native app will use it.
 So how are OTA delivered? Simple, replacing that bundle, when certain conditions are met, through a native linked library that restarts the execution of that bundle at runtime.&lt;/p&gt;
-&lt;p&gt;Now &lt;strong&gt;understanding how something works&lt;/strong&gt; is the only way you can &lt;strong&gt;improve yourself&lt;/strong&gt; and become as independent as possible. I might also have tempted a personal implementation of this mechanism, but it’d be silly since we have &lt;strong&gt;Microsoft CodePush&lt;/strong&gt;: a tool, inside the app center, made exactly to deliver OTA updates.&lt;/p&gt;
+&lt;p&gt;Now &lt;strong&gt;understanding how something works&lt;/strong&gt; is the only way you can &lt;strong&gt;improve yourself&lt;/strong&gt; and become as independent as possible. I might also have attempted to develop a personal implementation of this mechanism, but it’d be silly since we have &lt;strong&gt;Microsoft CodePush&lt;/strong&gt;: a tool, inside the app center, made exactly to deliver OTA updates.&lt;/p&gt;
 &lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Online resources are a bit scarce on how to:&lt;/p&gt;
 &lt;ul&gt;
@@ -33,7 +105,7 @@ So how are OTA delivered? Simple, replacing that bundle, when certain conditions
 &lt;ol&gt;
 &lt;li&gt;Signup&lt;/li&gt;
 &lt;li&gt;Go to your &lt;a href=&quot;https://appcenter.ms/apps&quot;&gt;apps’ dashboard&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;You’ll need to add two apps.  Basically, you can’t configure a single app (and therefore use a single key) to release updates to both your Android and iOS apps. &lt;strong&gt;You must configure two apps targeting two different OS&lt;/strong&gt;. This is confusing also because an old version of the cli allowed to specify multiple OS of a single app when releasing the updates.*
+&lt;li&gt;You’ll need to add two apps. Basically, you can’t configure a single app (and therefore use a single key) to release updates to both your Android and iOS apps. &lt;strong&gt;You must configure two apps targeting two different OS&lt;/strong&gt;. This is confusing also because an old version of the cli allowed to specify multiple OS of a single app when releasing the updates.*
 Configure them like this, once selecting iOS and once Android in the OS field (leave the Release Type empty, this has nothing to do with CodePush):
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
