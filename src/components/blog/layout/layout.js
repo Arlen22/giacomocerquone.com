@@ -7,7 +7,7 @@ import Header from "../header/header"
 
 import styles from "./layout.module.css"
 
-export default function BlogLayout({ children }) {
+export default function BlogLayout({ children, maxWidth }) {
   return (
     <>
       <Header />
@@ -15,7 +15,7 @@ export default function BlogLayout({ children }) {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(30),
+          maxWidth,
           padding: `0 ${rhythm(3 / 4)}`,
         }}
       >

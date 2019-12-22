@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/blog/layout/layout"
 import SEO from "../components/seo"
 import PostItem from "../components/blog/postItem/postItem"
+import { rhythm } from "../utils/typography"
 
 export default function BlogIndex({ location }) {
   const {
@@ -35,8 +36,8 @@ export default function BlogIndex({ location }) {
               imageAlt
               image {
                 childImageSharp {
-                  fixed(width: 900) {
-                    ...GatsbyImageSharpFixed_tracedSVG
+                  fluid {
+                    ...GatsbyImageSharpFluid_tracedSVG
                   }
                 }
               }
@@ -50,7 +51,7 @@ export default function BlogIndex({ location }) {
   const posts = allMarkdownRemark.edges
 
   return (
-    <Layout>
+    <Layout maxWidth={rhythm(30)}>
       <SEO
         title={siteMetadata.blogTitle}
         noTemplate

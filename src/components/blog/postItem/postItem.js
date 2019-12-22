@@ -11,7 +11,7 @@ function PostItem({ fields, frontmatter }) {
     <article className={styles.post}>
       {frontmatter.image && (
         <Image
-          fixed={frontmatter.image.childImageSharp.fixed}
+          fluid={frontmatter.image.childImageSharp.fluid}
           alt={frontmatter.imageAlt}
           className={styles.postThumb}
         />
