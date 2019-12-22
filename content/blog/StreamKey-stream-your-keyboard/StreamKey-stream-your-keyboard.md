@@ -4,6 +4,7 @@ date: 2016-12-02 11:06:59
 description: StreamKey is my new app to stream your keyboard toward another PC
 image: "./StreamKey.jpg"
 slug: blog/streamkey-stream-your-keyboard
+imgAuthor: drhemir
 ---
 
 My new little app is about a need that I had to fullfill since my keyboard suddenly broke in a cold sunday night. It was the keyboard of my desktop PC and I use it almost only for videogames but now that the party was over I needed to find a way to use a real keyboard from another PC (not an emulated one on a touchscreen device) and send the keystrokes towards the desktop.

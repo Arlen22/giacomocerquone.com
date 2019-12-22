@@ -4,6 +4,7 @@ date: 2018-05-06 18:44:02
 description: Let's discover the most used ways of assigning the right 'this' to react components functions
 image: "./binding_react.jpg"
 slug: blog/react-binding-patterns-major-pitfalls
+imgAuthor: me
 ---
 
 In this post I assume you know and use the well known Facebook library React.

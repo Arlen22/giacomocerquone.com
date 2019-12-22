@@ -4,6 +4,7 @@ description: We've created a path follower and maze solver robot car with, ardui
 date: 2018-02-22 02:58:29
 image: "./robotcar-01.png"
 slug: blog/path-follower-maze-solving-car-arduino
+imgAuthor: me
 ---
 
 Without considering the headaches and insomnia that university gave me in this exams session, due to the overwork I did, I'm here to tell you about one of our 4 projects of this semester that we successfully delivered, the Intelligent systems and Robotics laboratory's one.
