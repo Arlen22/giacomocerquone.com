@@ -5,7 +5,7 @@ description: How can we close an active connection initiated with Fetch? And mos
 image: "./closed-connection.jpg"
 imageAlt: market closed sign
 slug: blog/aborting-fetch-react-native
-draft: false
+imgAuthor: gaspanik
 ---
 
 EDIT: this post is now, happily, outdated since the AbortController implementation has been included in React Native 0.60.0 ([comment here](https://github.com/facebook/react-native/issues/18115#issuecomment-508389569))

@@ -5,6 +5,7 @@ description: Routing is a fundamental part of every front-end web app. Let's see
 image: "./Angular-routing.jpg"
 imageAlt: cartoon city routes near angular logo
 slug: blog/angular-routing
+imgAuthor: me
 ---
 
 Since september, if I recall correctly, I started writing on [ItalianCoders.it](http://italiancoders.it) after being contacted by Dario Frongillo. I was happy at first to contribute and very soon we became a true community, helping one another to share knowledge. Right now I'm administrating and writing on that blog with Dario and other four people and I decided to translate some articles that I consider interesting also for non italian speakers.

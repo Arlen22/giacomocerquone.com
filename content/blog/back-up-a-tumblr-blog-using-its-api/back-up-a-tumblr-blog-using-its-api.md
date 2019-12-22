@@ -4,6 +4,7 @@ description: Let’s use the Tumblr’s API to save every text post from a speci
 date: 2015-10-10 21:59:52
 image: "./Tumblr.svg_.jpg"
 slug: blog/back-up-a-tumblr-blog-using-its-api
+imgAuthor: me
 ---
 
 Since the first time I wrote an "Hello World" script I thought that the most exciting thing of programming is the fact that, if you know what you're doing, you can make your computer do whatever you want and, actually even better, you can control almost everything that runs on a computer. So the reason why I'm writing the second consecutive post about an API service is not because I hate you, rather because I love to control stuff and make them do things that they couldn't normally do. This time is the turn of Tumblr.
