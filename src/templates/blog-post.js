@@ -55,7 +55,7 @@ export default function BlogPostTemplate({ pageContext, data, location }) {
           fluid={post.frontmatter.image.childImageSharp.fluid}
           alt={post.frontmatter.imageAlt}
           style={{
-            height: "27rem",
+            maxHeight: "21rem",
           }}
         />
         <p style={{ marginTop: "1rem" }}>
