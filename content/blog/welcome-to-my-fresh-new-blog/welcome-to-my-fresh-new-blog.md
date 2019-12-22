@@ -4,6 +4,7 @@ description: How could I start everything without a first post where I welcome y
 date: 2015-09-14 05:34:00
 image: "./first-post.jpg"
 slug: blog/welcome-to-my-fresh-new-blog
+imgAuthor: billjelen
 ---
 
 ## Welcome
