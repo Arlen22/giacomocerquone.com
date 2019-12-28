@@ -12,6 +12,16 @@ oceanBeachTheme.overrideThemeStyles = () => ({
     marginTop: "1.5em",
     marginBottom: "0.8em",
   },
+  ol: {
+    color: "#666",
+  },
+  ul: {
+    color: "#666",
+  },
+  li: {
+    margin: 0,
+    padding: "0.1em",
+  },
   h1: {
     color: "#555",
     fontSize: "3em",
