@@ -157,7 +157,7 @@ export const pageQuery = graphql`
             fluid {
               ...GatsbyImageSharpFluid_tracedSVG
             }
-            fixed(width: 450) {
+            fixed(width: 650) {
               ...GatsbyImageSharpFixed
             }
           }
