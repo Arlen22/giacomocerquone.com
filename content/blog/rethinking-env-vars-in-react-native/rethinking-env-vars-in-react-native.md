@@ -6,6 +6,7 @@ image: "./rethinking-env-var.jpg"
 imageAlt: monkey thinking
 slug: blog/rethinking-env-vars-in-react-native
 imgAuthor: earbiscuits
+draft: false
 ---
 
 We can say it: some parts of React Native are still **missing** and sometimes this may keep us on alert when developing an app made for the public.<br/>
